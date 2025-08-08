@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rentsy Tenant Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      background-color: #f4f6f8;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #2b2f4e;
+      color: white;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 30px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      margin: 20px 0;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .topbar {
+      background-color: #fff;
+      padding: 15px 20px;
+      box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .widgets {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .search-box, .ai-box {
+      background-color: white;
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .section-title {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .suggested-listings {
+      margin-top: 30px;
+    }
+
+    .listing-slider {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    .listing-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+      padding: 10px;
+      min-width: 250px;
+    }
+
+    .listing-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .listing-card h3 {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .listing-card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .listing-card button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      border: none;
+      background-color: #2b2f4e;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .listing-card button:hover {
+      background-color: #1f2340;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Rentsy</h2>
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Search Properties</a></li>
+      <li><a href="#">Saved Listings</a></li>
+      <li><a href="#">Messages</a></li>
+      <li><a href="#">Bookings</a></li>
+      <li><a href="#">Ask AI</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="topbar">
+      <h1>Welcome, Tenant!</h1>
+    </div>
+
+    <!-- Widgets -->
+    <div class="widgets">
+      <div class="card">
+        <h3><i class="fa fa-house"></i> Bookings</h3>
+        <p>2 Active</p>
+      </div>
+      <div class="card">
+        <h3><i class="fa fa-star"></i> Ratings</h3>
+        <p>4.5 Avg</p>
+      </div>
+      <div class="card">
+        <h3><i class="fa fa-heart"></i> Saved</h3>
+        <p>5 Properties</p>
+      </div>
+      <div class="card">
+        <h3><i class="fa fa-envelope"></i> Messages</h3>
+        <p>1 New</p>
+      </div>
+    </div>
+
+    <!-- Search Box -->
+    <div class="search-box">
+      <h2 class="section-title">Quick Search</h2>
+      <input type="text" placeholder="Search by location, rent, features...">
+    </div>
+
+    <!-- AI Box -->
+    <div class="ai-box">
+      <h2 class="section-title">Ask Rentsy AI</h2>
+      <input type="text" placeholder="e.g., Show me 2BHK flats near NSU under 20k">
+    </div>
+
+    <!-- Suggested Listings -->
+    <div class="suggested-listings">
+      <h2 class="section-title">Suggested for You</h2>
+      <div class="listing-slider">
+        <div class="listing-card">
+          <img src="https://via.placeholder.com/250x150" alt="Listing 1">
+          <h3>Studio in Dhanmondi</h3>
+          <p>৳9,000/month • Furnished</p>
+          <button>View Details</button>
+        </div>
+        <div class="listing-card">
+          <img src="https://via.placeholder.com/250x150" alt="Listing 2">
+          <h3>1BHK in Bashundhara</h3>
+          <p>৳12,000/month • Semi-Furnished</p>
+          <button>View Details</button>
+        </div>
+        <div class="listing-card">
+          <img src="https://via.placeholder.com/250x150" alt="Listing 3">
+          <h3>Shared Flat in Mirpur</h3>
+          <p>৳5,500/month • Unfurnished</p>
+          <button>View Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
